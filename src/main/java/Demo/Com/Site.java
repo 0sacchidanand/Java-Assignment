@@ -11,10 +11,6 @@ public class Site {
 		System.out.println("Welcome"+u.getUemail());
 	}
 	
-
-    
-    
-	
 	public void login(User u)
 	{
 		if(u.getUage()>=70)
@@ -25,10 +21,13 @@ public class Site {
 	}
 	public void verifyUser(User u) {
 		String emailRegex = "^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
+		
         Pattern pattern = Pattern.compile(emailRegex);
         Matcher matcher = pattern.matcher(u.getUemail());
+		
+		Boolean Validmail = u.getUemail().contains("@gmail.com");
 
-        if (matcher.matches()) {
+        if (matcher.matches() && Validmail) {
             System.out.println("Email is valid");
         } else {
             throw new InvalidEmailException("Email is invalid");

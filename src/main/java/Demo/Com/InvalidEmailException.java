@@ -1,5 +1,6 @@
 package Demo.Com;
 
+@SuppressWarnings("serial")
 public class InvalidEmailException extends RuntimeException {
 	private String msg= "Invalid Email ";
 	public InvalidEmailException(String msg) {
